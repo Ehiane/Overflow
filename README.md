@@ -9,7 +9,7 @@ A .NET Aspire-powered distributed sample that combines a minimal API service, a 
     * Logged in to Keycloak using Postman to retrieve a token. 
 
 ## Architecture
-- **AppHost**: Orchestrates services with Aspire, provisioning Redis (`cache`) and Keycloak (`keycloak:6001`), wiring service discovery, health checks, and startup ordering. See [Overflow.AppHost/AppHost.cs](Overflow/AppHost/AppHost.cs).
+- **AppHost**: Orchestrates services with Aspire, provisioning Redis (`cache`) and Keycloak (`keycloak:6001`), wiring service discovery, health checks, and startup ordering. See [Overflow.AppHost/AppHost.cs](Overflow/Overflow.AppHost/AppHost.cs).
 - **API Service**: Minimal API with sample `/weatherforecast` and root liveness message; includes Aspire defaults and OpenAPI in development. See [Overflow.ApiService/Program.cs](Overflow/Overflow.ApiService/Program.cs).
 - **Web Frontend**: Blazor Server app using Aspire service discovery; consumes the API via `WeatherApiClient` with Redis output caching. See [Overflow.Web/Program.cs](Overflow/Overflow.Web/Program.cs) and [Overflow.Web/WeatherApiClient.cs](Overflow/Overflow.Web/WeatherApiClient.cs).
 - **Service Defaults**: Shared extensions for OpenTelemetry, health checks, service discovery, and resilient HTTP clients. See [Overflow.ServiceDefaults/Extensions.cs](Overflow/Overflow.ServiceDefaults/Extensions.cs).
