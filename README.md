@@ -2,6 +2,12 @@
 
 A .NET Aspire-powered distributed sample that combines a minimal API service, a Blazor Server frontend, shared service defaults (health, telemetry, resilience), and an Aspire AppHost that wires everything together with Redis caching and a Keycloak identity container.
 
+## Section Summaries
+- **Section 2**: 
+    * We setup and configured Aspire and used it to run and orchestrate and Identity Provider (Keycloak)
+    * Ran the Aspire services and took an early look at dashboard. 
+    * Logged in to Keycloak using Postman to retrieve a token. 
+
 ## Architecture
 - **AppHost**: Orchestrates services with Aspire, provisioning Redis (`cache`) and Keycloak (`keycloak:6001`), wiring service discovery, health checks, and startup ordering. See [Overflow.AppHost/AppHost.cs](Overflow/AppHost/AppHost.cs).
 - **API Service**: Minimal API with sample `/weatherforecast` and root liveness message; includes Aspire defaults and OpenAPI in development. See [Overflow.ApiService/Program.cs](Overflow/Overflow.ApiService/Program.cs).
